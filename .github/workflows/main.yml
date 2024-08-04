@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image (frontend)
         uses: docker/build-push-action@v3
         with:
           context: .
@@ -38,7 +38,7 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/admin-panel-frontend:latest
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image (backend)
         uses: docker/build-push-action@v3
         with:
           context: .
